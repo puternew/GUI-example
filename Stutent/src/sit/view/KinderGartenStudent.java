@@ -31,7 +31,8 @@ public class KinderGartenStudent extends Student{
 
     @Override
     public String toString() {
-        return "KinderGartenStudent{" + "schoolBusFee=" + schoolBusFee + ", annualFee=" + annualFee + ", parentName=" + parentName + '}';
+        return "KinderGartenStudent{" + "schoolBusFee=" + schoolBusFee + ", annualFee=" + annualFee + ", parentName=" + parentName + '}'
+                +"Student{" + "studentId=" + studentId + ", studentName=" + studentName +'}';
     }
        
 }

@@ -38,7 +38,8 @@ public class UniversityStudent extends Student{
 
     @Override
     public String toString() {
-        return "UniversityStudent{" + "educationSupportFee=" + educationSupportFee + ", scholarship=" + scholarship + ", alumni=" + alumni + '}';
+        return "UniversityStudent{" + "educationSupportFee=" + educationSupportFee + ", scholarship=" + scholarship + ", alumni=" + alumni + '}'
+                +"Student{" + "studentId=" + studentId + ", studentName=" + studentName +'}';
     }
     
 }
