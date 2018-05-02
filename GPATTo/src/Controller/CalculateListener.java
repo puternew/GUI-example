@@ -29,25 +29,41 @@ public class CalculateListener implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
+        if (e.getActionCommand().equalsIgnoreCase("Calculate")){
+            calculateGrade();
+        }
+        else if (e.getActionCommand().equals("Save")) {
+            saveToDataFile();
+        }
+        else if (e.getActionCommand().equals("Save As Object")) {
+            saveToObjectFile();
+        }
         
-        if (e.getActionCommand().equals("Calculate")) {
-            System.out.println("Running... .. .");
+    }
+    
+    public void saveToObjectFile(){
+        System.out.println("Saving to Object file... .. .");
+    }
+    public void saveToDataFile(){
+        System.out.println("Saving to Data file... .. .");
+
+    }
+
+    
+    public void calculateGrade(){
+        System.out.println("Running... .. .");
         float totalGrade = 0;
         float totalCredit = 0;
         float gpa = 0;
-            
             for (int i = 0; i < txtGrades.length; i++) {
                 float grade = convertGrate(txtGrades[i].getText());
                 float credit = Float.parseFloat(txtCredits[i].getText());
                 totalGrade += grade*credit; 
                 totalCredit += credit;
             }
-            
-            gpa=totalGrade/totalCredit;
-            DecimalFormat df = new DecimalFormat("0.00");
-            txtGPA.setText(df.format(gpa));
-        }
+                gpa=totalGrade/totalCredit;
+                DecimalFormat df = new DecimalFormat("0.00");
+                txtGPA.setText(df.format(gpa));
     }
     
     public float convertGrate(String gradeString){

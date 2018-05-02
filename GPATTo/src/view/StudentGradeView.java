@@ -69,8 +69,12 @@ public class StudentGradeView {
     public void loadButton() {
         jpnButton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
           
-        buttonSave = new JButton("SAVE");
-        buttonSaveAs = new JButton("SAVE AS OBJECT");
+        buttonSave = new JButton("Save");
+        CalculateListener cal = new CalculateListener(txtGrades, txtCredits, txtGPA);
+        buttonSave.addActionListener(cal);
+        buttonSaveAs = new JButton("Save As Object");
+        buttonSaveAs.addActionListener(cal);
+        
         jpnButton.add(buttonSave);
         jpnButton.add(buttonSaveAs);
     
